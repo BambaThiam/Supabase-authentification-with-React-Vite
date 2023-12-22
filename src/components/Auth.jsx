@@ -21,16 +21,21 @@ const Auth = () => {
   }
 
   return (
-    <div className="row flex flex-center">
-      <div className="col-6 form-widget">
-        <h1 className="header">Supabase + React</h1>
-        <p className="description">
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="flex flex-col items-center bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">
+        <h1 className="text-lg font-bold text-gray-900 mb-6">
+          Projet React : Feature Authentication with Supabase
+        </h1>
+        <p className="text-sm text-gray-700 mb-4">
           Sign in via magic link with your email below
         </p>
-        <form className="form-widget" onSubmit={handleLogin}>
+        <form
+          className="flex flex-col items-center space-y-4"
+          onSubmit={handleLogin}
+        >
           <div>
             <input
-              className="inputField"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="email"
               placeholder="Your email"
               value={email}
@@ -39,8 +44,11 @@ const Auth = () => {
             />
           </div>
           <div>
-            <button className={'button block'} disabled={loading}>
-              {loading ? <span>Loading</span> : <span>Send magic link</span>}
+            <button
+              className="text-white bg-blue-500 hover:bg-blue-700 font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              disabled={loading}
+            >
+              {loading ? <span>Loading...</span> : <span>Send magic link</span>}
             </button>
           </div>
         </form>
